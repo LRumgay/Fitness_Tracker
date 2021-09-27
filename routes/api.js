@@ -1,6 +1,5 @@
 const router = require("express").Router();
-const { Workout } = require("../models");
-const workout = require("../models/workout");
+const Workout = require("../models/workout");
 
 router.get("/api/workouts", (req, res) => {
     Workout.aggregate([
@@ -35,26 +34,5 @@ router.put("/api/workouts/:id"), (req, res) => {
         res.status(400).json(err);
     });
 };
-
-module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 module.exports = router;
