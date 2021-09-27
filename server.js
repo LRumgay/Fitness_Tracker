@@ -1,5 +1,5 @@
-const express = require("express")
-const mongoose = request("mongoose")
+const express = require("express");
+const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3000;
 
@@ -15,8 +15,9 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
   useFindAndModify: false
 });
 
-// routes
+
 app.use(require("./routes/api.js"));
+app.use(require("./routes/stats.js"));
 // dont forget require for workout stats //
 
 app.listen(PORT, () => {
